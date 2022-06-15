@@ -1,0 +1,30 @@
+{
+  "name": "joblist",
+  "version": "0.1.0",
+  "private": true,
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "./node_modules/.bin/eslint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,less,md}": [
+      "./node_modules/.bin/prettier --write"
+    ],
+    "*.js": "eslint --cache --fix"
+  },
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.17.0",
+    "eslint-config-next": "12.1.6"
+  }
+}
