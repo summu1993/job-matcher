@@ -5,9 +5,13 @@ import Image from 'next/image'
 import Button from './actionableButtons/Button'
 
 const WorkerProfileCard = ({}: {}) => {
-  const { jobDetail, workerProfile } = useContext(
+  const { workerProfile , setShowJobDetails} = useContext(
     WorkerContext
   ) as AuthContextType
+
+  const handleJobDetailsVisibility = () => {
+    setShowJobDetails(true)
+  };
 
   return (
     <div className="max-w-sm h-auto mx-auto my-20 rounded-md overflow-hidden shadow-lg">
@@ -24,9 +28,11 @@ const WorkerProfileCard = ({}: {}) => {
           </p>
         </div>
         <div className="flex flex-row justify-center font-semibold mx-auto my-4">
-          <div className="my-auto text-white bg-teal-400 hover:bg-teal-600 hover:cursor-pointer rounded-3xl py-2 px-4 mx-2">
-            See Matching Jobs
-          </div>
+          <Button 
+            buttonClass="my-auto text-white bg-teal-400 hover:bg-teal-600 hover:cursor-pointer rounded-3xl py-2 px-4 mx-2"
+            submitFunction={handleJobDetailsVisibility}
+            buttonText="See Matching Jobs"
+            /> 
         </div>
       </div>
 

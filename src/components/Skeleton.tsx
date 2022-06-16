@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react'
 import Skeleton from 'react-loading-skeleton'
 
@@ -6,7 +5,7 @@ const CardSkeleton = () => (
   <>
     {Array(9)
       .fill('')
-      .map((item, index) => (
+      .map((_, index) => (
         <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col" key={index}>
           <Skeleton height={256} />
           <div className="pt-3 flex items-center justify-between">

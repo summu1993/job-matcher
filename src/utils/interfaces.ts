@@ -46,6 +46,8 @@ export interface WorkerProfile {
 export interface AuthContextType {
   jobDetail: JobDetail[]
   workerProfile: WorkerProfile
+  showJobDetails: boolean
+  setShowJobDetails: (input: boolean) => void
   setJobDetail: (input: JobDetail[]) => void
   setWorkerProfile: (input: WorkerProfile) => void
   getWorker: () => void

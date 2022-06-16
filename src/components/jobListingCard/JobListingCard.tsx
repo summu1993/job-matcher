@@ -1,6 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
-import Image from 'next/image'
-import Button from '../actionableButtons/Button'
+import React from 'react'
 import ShiftDates from './ShiftDates/ShiftDates'
 import Location from './Location/Location'
 import ReportTo from './ReportTo/ReportTo'
@@ -11,7 +9,7 @@ const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
   return (
     <div
       key={jobDetails?.jobId}
-      // className="w-full md:w-1/3 xl:w-1/3 p-6 flex flex-col product-information"
+      className="w-full md:w-1/3 xl:w-1/3 p-6 flex flex-col"
     >
       <img
         data-test-py="categoryProducts"

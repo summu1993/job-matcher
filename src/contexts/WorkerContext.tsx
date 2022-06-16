@@ -9,6 +9,8 @@ const WorkerContext = createContext({})
 type ComponentProps = React.PropsWithChildren<{}>
 
 const WorkerProvider: FC<ComponentProps> = ({ children }) => {
+  
+  const [showJobDetails, setShowJobDetails] = useState<boolean>(false)
   const [jobDetail, setJobDetail] = useState<JobDetail[]>([])
   const [workerProfile, setWorkerProfile] = useState<WorkerProfile>()
 
@@ -35,6 +37,8 @@ const WorkerProvider: FC<ComponentProps> = ({ children }) => {
       value={{
         jobDetail,
         workerProfile,
+        showJobDetails,
+        setShowJobDetails,
         setJobDetail,
         setWorkerProfile,
         getWorker,

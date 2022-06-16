@@ -9,6 +9,7 @@ const Requirements = ({ jobDetails }: { jobDetails: JobDetail }) => {
 
         <div className="w-5/6 pl-3">
           <div className="text-sm font-extrabold">Requirements</div>
+          <div className="text-md h-12 overflow-auto font-light uppercase">
           {Array.isArray(jobDetails.requirements) && (
             <div className="text-md w-100 font-light">
               {jobDetails.requirements.map((requirement: string, index) => (
@@ -16,6 +17,7 @@ const Requirements = ({ jobDetails }: { jobDetails: JobDetail }) => {
               ))}
             </div>
           )}
+          </div>
         </div>
       </div>
     </div>
