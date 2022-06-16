@@ -23,7 +23,9 @@ const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
   const handleJobReject = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, jobId: string) => {
     const data = await workerJobRejected(jobId)
     if (data && data.success){ 
-      notifyToast("error", "You have rejected this Job")
+      notifyToast("warning", "You have rejected this Job")
+    }else{
+      notifyToast("error", data.message)
     }
   }
 
@@ -31,6 +33,8 @@ const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
     const data = await workerJobAccepted(jobId)
     if (data && data.success){
       notifyToast("success", "You have acceped this Job")
+    }else{
+      notifyToast("error", data.message)
     }
   }
 
