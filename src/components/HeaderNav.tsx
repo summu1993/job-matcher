@@ -1,10 +1,16 @@
-import React, { useState, useContext, useEffect, FC } from "react";
-import Link from "next/link";
-import { isTablet, isDesktop } from "react-device-detect";
+import React, { useState, useContext, useEffect, FC } from 'react'
+import Link from 'next/link'
+import { WorkerContext } from '../contexts/WorkerContext'
+import { AuthContextType } from '../utils/interfaces'
+import { isTablet, isDesktop } from 'react-device-detect'
 
-type ComponentProps = React.PropsWithChildren<{}>;
+type ComponentProps = React.PropsWithChildren<{}>
 
 const HeaderNav: FC<ComponentProps> = ({ children }) => {
+  const { jobDetail, workerProfile } = useContext(
+    WorkerContext
+  ) as AuthContextType
+
   return (
     <React.Fragment>
       <nav className="fixed top-0 left-0 z-10 flex h-16 w-full items-center justify-between bg-black px-4 md:h-24 md:px-16">
@@ -43,13 +49,13 @@ const HeaderNav: FC<ComponentProps> = ({ children }) => {
         </div>
         <div className="flex items-center text-base text-white md:text-2xl">
           <Link href="/">
-            <>{`Suman Kumar`}</>
+            <>{`${workerProfile?.firstName} ${workerProfile?.lastName}`}</>
           </Link>
         </div>
       </nav>
       {children}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default HeaderNav;
+export default HeaderNav
