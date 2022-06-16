@@ -1,11 +1,39 @@
-import React from 'react'
+import React , {useContext} from 'react'
 import ShiftDates from './ShiftDates/ShiftDates'
 import Location from './Location/Location'
 import ReportTo from './ReportTo/ReportTo'
 import Requirements from './Requirements/Requirements'
+import Button from '../actionableButtons/Button'
 import type { JobDetail } from '../../utils/interfaces'
+import { WorkerContext } from '../../contexts/WorkerContext'
+import { AuthContextType } from '../../utils/interfaces'
+import {
+  workerJobAccepted,
+  workerJobRejected,
+} from '../../pages/api/worker'
+
 
 const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
+
+  const { notifyToast} = useContext(
+    WorkerContext
+  ) as AuthContextType
+
+
+  const handleJobReject = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, jobId: string) => {
+    const data = await workerJobRejected(jobId)
+    if (data && data.success){ 
+      notifyToast("error", "You have rejected this Job")
+    }
+  }
+
+  const handleJobAccept = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, jobId: string) => {
+    const data = await workerJobAccepted(jobId)
+    if (data && data.success){
+      notifyToast("success", "You have acceped this Job")
+    }
+  }
+
   return (
     <div
       key={jobDetails?.jobId}
@@ -47,6 +75,20 @@ const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
       <Location jobDetails={jobDetails} />
       <Requirements jobDetails={jobDetails} />
       <ReportTo jobDetails={jobDetails} />
+
+      <div className="flex justify-between p-5">
+        <Button
+          submitFunction={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleJobReject(e, jobDetails.jobId)}
+          buttonText="No Thanks"
+          buttonClass="w-2/5 rounded-md text-lg duration-200 ease-in hover:shadow-xl border border-solid border-black bg-white py-4 text-black"
+        />
+        <Button
+          submitFunction={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleJobAccept(e, jobDetails.jobId)}
+          buttonText="Ill Take it"
+          buttonClass="w-2/5 rounded-md text-lg duration-200 ease-in hover:shadow-xl bg-black py-4 text-white"
+        />
+      </div>
+
     </div>
   )
 }

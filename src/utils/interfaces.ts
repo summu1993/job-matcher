@@ -47,6 +47,8 @@ export interface AuthContextType {
   jobDetail: JobDetail[]
   workerProfile: WorkerProfile
   showJobDetails: boolean
+  dismissToast: () => void
+  notifyToast: (type: string, message: string) => void
   setShowJobDetails: (input: boolean) => void
   setJobDetail: (input: JobDetail[]) => void
   setWorkerProfile: (input: WorkerProfile) => void

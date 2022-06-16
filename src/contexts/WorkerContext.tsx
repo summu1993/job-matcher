@@ -1,5 +1,6 @@
 import React, { createContext, useReducer, useState, FC } from 'react'
 import { JobDetail, WorkerProfile } from '../utils/interfaces'
+import toast from "../components/Toast/toast";
 import {
   getWorkerProfile,
   getWorkerMatchingJobs,
@@ -13,6 +14,15 @@ const WorkerProvider: FC<ComponentProps> = ({ children }) => {
   const [showJobDetails, setShowJobDetails] = useState<boolean>(false)
   const [jobDetail, setJobDetail] = useState<JobDetail[]>([])
   const [workerProfile, setWorkerProfile] = useState<WorkerProfile>()
+
+
+  const notifyToast = React.useCallback((type: any, message: any) => {
+    toast({ type, message });
+  }, []);
+
+  const dismissToast = React.useCallback(() => {
+    toast.dismiss();
+  }, []);
 
   const getWorker = async () => {
     try {
@@ -38,6 +48,8 @@ const WorkerProvider: FC<ComponentProps> = ({ children }) => {
         jobDetail,
         workerProfile,
         showJobDetails,
+        notifyToast,
+        dismissToast,
         setShowJobDetails,
         setJobDetail,
         setWorkerProfile,

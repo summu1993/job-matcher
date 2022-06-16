@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { WorkerContext } from '../contexts/WorkerContext'
 import { AuthContextType } from '../utils/interfaces'
-import Image from 'next/image'
 import Button from './actionableButtons/Button'
 
 const WorkerProfileCard = ({}: {}) => {
