@@ -89,7 +89,7 @@ Notification action based on user action either he/she accepts the job rejects i
 
 ## Run Test cases
 
-Unit test has been implemented using Jest . Test is in watcher mode so runtime time based will trigger the test run in the background. To run the tests, run the below command
+Unit test has been implemented using Jest . Test suites runs in watcher mode so runtime changes will trigger the test cases to run automatically in the background. To run the tests, run the below command
 
 
 ```shell
