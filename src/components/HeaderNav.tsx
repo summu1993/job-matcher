@@ -12,7 +12,7 @@ const HeaderNav: FC<ComponentProps> = ({ children }) => {
 
   return (
     <React.Fragment>
-      <nav className="fixed top-0 left-0 z-10 flex h-12 w-full items-center justify-between bg-black px-4 md:h-20 md:px-12">
+      <nav data-testid="navBarTop" className="fixed top-0 left-0 z-10 flex h-12 w-full items-center justify-between bg-black px-4 md:h-20 md:px-12">
         <div className="h-6 w-auto md:h-11">
           <Link href="/">
             <svg

@@ -52,6 +52,6 @@ export interface AuthContextType {
   setShowJobDetails: (input: boolean) => void
   setJobDetail: (input: JobDetail[]) => void
   setWorkerProfile: (input: WorkerProfile) => void
-  getWorker: () => void
-  getMatchingJobs: () => void
+  getWorker: any
+  getMatchingJobs: any
 }

@@ -41,23 +41,23 @@ const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
   return (
     <div
       key={jobDetails?.jobId}
-      className="w-full md:w-1/3 xl:w-1/3 p-6 flex flex-col"
+      className="jobDetailsListing w-full md:w-1/3 xl:w-1/3 p-6 flex flex-col"
     >
       <img
-        data-test-py="categoryProducts"
-        className="hover:grow hover:shadow-lg"
+        data-test-jb="jobCategoryTag"
+        className="jobCategory hover:grow hover:shadow-lg"
         src={jobDetails?.jobTitle?.imageUrl}
-        alt="Job Image"
+        alt={jobDetails?.jobTitle?.name}
       />
 
-      <div className="p-5 text-gray-700">
+      <div className="p-5 text-gray-700 jobTitle">
         <h3 className="text-2xl font-bold ">{jobDetails?.jobTitle?.name}</h3>
         <span className="text-lg font-semibold">
           {jobDetails?.company?.name}
         </span>
       </div>
 
-      <div className="flex justify-between bg-teal-400 px-5 py-3">
+      <div className="flex justify-between bg-teal-400 px-5 py-3 workDistance">
         <div>
           <div className="text-md font-extrabold text-gray-700">Distance</div>
           <div className="text-3xl font-bold text-white">
@@ -65,7 +65,7 @@ const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
           </div>
         </div>
         <div>
-          <div className="text-md text-right font-extrabold text-gray-700">
+          <div className="text-md text-right font-extrabold text-gray-700 hourlyRate">
             Hourly Rate
           </div>
           <div className="text-right text-3xl font-bold text-white">
@@ -75,10 +75,10 @@ const JobListingCard = ({ jobDetails }: { jobDetails: JobDetail }) => {
         </div>
       </div>
 
-      <ShiftDates jobShifts={jobDetails?.shifts} />
-      <Location jobDetails={jobDetails} />
-      <Requirements jobDetails={jobDetails} />
-      <ReportTo jobDetails={jobDetails} />
+      <ShiftDates shifts={jobDetails?.shifts} />
+      <Location address={jobDetails.company?.address?.formattedAddress} miles={jobDetails.milesToTravel} />
+      <Requirements requirements={jobDetails.requirements} />
+      <ReportTo reportToName={jobDetails.company?.reportTo?.name} reportToPhone={jobDetails.company?.reportTo?.phone} />
 
       <div className="flex justify-between p-5">
         <Button

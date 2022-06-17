@@ -1,7 +1,6 @@
 import React from 'react'
-import type { JobDetail } from '../../../utils/interfaces'
 
-const ReportTo = ({ jobDetails }: { jobDetails: JobDetail }) => {
+const ReportTo = ({ reportToName,reportToPhone }) => {
   return (
     <div className="px-5">
       <div className="flex flex-row border-b border-solid border-gray-200 py-5">
@@ -11,8 +10,8 @@ const ReportTo = ({ jobDetails }: { jobDetails: JobDetail }) => {
           <div className="text-sm font-extrabold">Report To</div>
 
           <div className="text-md w-100 font-light">
-            {jobDetails.company?.reportTo?.name}{' '}
-            {jobDetails.company?.reportTo?.phone}
+            {reportToName}{' '}
+            {reportToPhone}
           </div>
         </div>
       </div>

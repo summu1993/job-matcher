@@ -1,7 +1,7 @@
 import React from 'react'
 import type { JobDetail } from '../../../utils/interfaces'
 
-const Requirements = ({ jobDetails }: { jobDetails: JobDetail }) => {
+const Requirements = ({ requirements }) => {
   return (
     <div className="px-5">
       <div className="flex flex-row border-b border-solid border-gray-200 py-5">
@@ -10,9 +10,9 @@ const Requirements = ({ jobDetails }: { jobDetails: JobDetail }) => {
         <div className="w-5/6 pl-3">
           <div className="text-sm font-extrabold">Requirements</div>
           <div className="text-md h-12 overflow-auto font-light uppercase">
-          {Array.isArray(jobDetails.requirements) && (
+          {Array.isArray(requirements) && (
             <div className="text-md w-100 font-light">
-              {jobDetails.requirements.map((requirement: string, index) => (
+              {requirements.map((requirement: string, index) => (
                 <div key={index}>- {requirement}</div>
               ))}
             </div>

@@ -13,7 +13,7 @@ const WorkerProfileCard = ({}: {}) => {
   };
 
   return (
-    <div className="max-w-sm h-auto mx-auto my-20 rounded-md overflow-hidden shadow-lg">
+    <div data-testid="workerProfile" className="max-w-sm h-auto mx-auto my-20 rounded-md overflow-hidden shadow-lg">
       <div className="px-6 py-4">
         <div className="flex flex-col">
           <div className="font-bold text-xl text-center text-gray-800 hover:bg-teal-500 hover:cursor-pointer">
@@ -28,6 +28,7 @@ const WorkerProfileCard = ({}: {}) => {
         </div>
         <div className="flex flex-row justify-center font-semibold mx-auto my-4">
           <Button 
+            buttonTestId="matchingJobsCta"
             buttonClass="my-auto text-white bg-teal-400 hover:bg-teal-600 hover:cursor-pointer rounded-3xl py-2 px-4 mx-2"
             submitFunction={handleJobDetailsVisibility}
             buttonText="See Matching Jobs"
@@ -43,7 +44,7 @@ const WorkerProfileCard = ({}: {}) => {
         </h4>
         <p className="text-xs mx-6 text-center">
           <span>{workerProfile?.address?.formattedAddress}</span>
-          <h3>{workerProfile?.address?.zoneId}</h3>
+          <span>{workerProfile?.address?.zoneId}</span>
         </p>
       </div>
       <div className="bg-teal-400 text-white mt-5 px-6 pt-4 pb-2 flex flex-row justify-center">

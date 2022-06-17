@@ -7,6 +7,7 @@ interface ButtonProps {
   buttonId?: string
   buttonClass: string
   datatest?: string
+  buttonTestId?: string
   submitFunction?: any
   children?: any
 }
@@ -15,6 +16,7 @@ const Button: FC<ButtonProps> = ({
   buttonText,
   buttonClass,
   datatest,
+  buttonTestId,
   submitFunction,
   buttonId,
   children,
@@ -22,6 +24,7 @@ const Button: FC<ButtonProps> = ({
   <button
     type="button"
     id={buttonId}
+    data-testid={buttonTestId}
     onClick={(e) => submitFunction(e)}
     className={buttonClass}
     data-test-py={datatest}

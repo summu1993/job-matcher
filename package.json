@@ -6,7 +6,8 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -23,12 +24,16 @@
     "react-toastify": "^9.0.4"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
     "@types/node": "17.0.4",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "autoprefixer": "^10.4.0",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
+    "jest": "28.1.0",
+    "jest-environment-jsdom": "28.1.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.1.3",

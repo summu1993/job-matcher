@@ -13,7 +13,7 @@ const SwipeJobs: NextPage = () => {
   useEffect(() => {
     getWorker()
     getMatchingJobs()
-  }, [])
+  },[])
 
   return (
     <div className="mx-auto  max-w-7xl py-8 lg:py-24">

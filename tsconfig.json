@@ -24,6 +24,6 @@
     "**/src/**/*.ts",
     "**/test/**/*.ts",
     "next.config.js"
-  ],
+, "tests/header.test.js"  ],
   "exclude": ["node_modules"]
 }
