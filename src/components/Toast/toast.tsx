@@ -33,11 +33,6 @@ const ToastMessage = ({ type, message }) =>
     </div>
   );
 
-ToastMessage.propTypes = {
-  message: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
-};
-
 ToastMessage.dismiss = toast.dismiss;
 
 export default ToastMessage;

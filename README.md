@@ -77,7 +77,7 @@ Notification action based on user action either he/she accepts the job rejects i
 <img width="1427" alt="not" src="https://user-images.githubusercontent.com/35147974/174237745-58407475-eb7d-4baf-9b56-d977143f3b93.png">
 
 
-#Mobile Responsiveness
+# Mobile Responsiveness
 
 <img width="331" alt="indexMob" src="https://user-images.githubusercontent.com/35147974/174237952-bd3f3e32-6028-4361-96f8-5ba730ec289d.png">
 

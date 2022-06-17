@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, FC } from 'react'
+import React, {  useContext, FC } from 'react'
 import Link from 'next/link'
 import { WorkerContext } from '../contexts/WorkerContext'
 import { AuthContextType } from '../utils/interfaces'

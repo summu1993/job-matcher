@@ -43,6 +43,16 @@ export interface WorkerProfile {
   workerId: string
 }
 
+export interface ButtonProps {
+  buttonText?: string
+  buttonId?: string
+  buttonClass: string
+  datatest?: string
+  buttonTestId?: string
+  submitFunction?: any
+  children?: any
+}
+
 export interface AuthContextType {
   jobDetail: JobDetail[]
   workerProfile: WorkerProfile

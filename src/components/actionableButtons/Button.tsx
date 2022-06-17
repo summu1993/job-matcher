@@ -1,16 +1,5 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { FC } from 'react'
-
-interface ButtonProps {
-  buttonText?: string
-  buttonId?: string
-  buttonClass: string
-  datatest?: string
-  buttonTestId?: string
-  submitFunction?: any
-  children?: any
-}
+import { ButtonProps } from '../../utils/interfaces'
 
 const Button: FC<ButtonProps> = ({
   buttonText,

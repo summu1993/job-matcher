@@ -1,5 +1,4 @@
 import React from 'react'
-import type { JobDetail } from '../../../utils/interfaces'
 
 const Requirements = ({ requirements }) => {
   return (

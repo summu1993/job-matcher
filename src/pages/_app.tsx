@@ -1,9 +1,6 @@
-// import '../styles/globals.css'
 import '../../styles/globals.css'
 import type { AppProps } from 'next/app'
 import React, { useState } from 'react'
-import dynamic from 'next/dynamic'
-import Router from 'next/router'
 import { WorkerProvider } from '../contexts/WorkerContext'
 import Layout from '../components/baseLayout/Layout'
 import { ToastContainer } from "react-toastify";
